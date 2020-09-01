@@ -1,0 +1,25 @@
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+    string fn,ln;
+    int age;
+
+    cout << "Input your first name: ";
+    cin >> fn;
+    cout << "Input your last name: ";
+    cin >> ln;
+    cout << "Input your age: ";
+    cin >> age;
+    cout << "Your name is "<< fn << " " << ln <<" and you are "<< age <<" years old." << endl;
+
+    if (age<18)
+        cout << "You are under aged." << endl;
+    else if (age>68)
+        cout << "You are retired." << endl;
+    else
+        cout << "You are at work age." << endl;
+    return 0;
+}
