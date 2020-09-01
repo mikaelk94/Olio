@@ -1,0 +1,28 @@
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+    int temp;
+    string choice;
+    cout << "C -> F or F -> C? " << endl << "Select your starting temp: ";
+    cin >> choice;
+
+    if (choice == "F") {
+        cout << "Input the temperature in Fahrenheit: ";
+        cin >> temp;
+        cout << temp << " degrees in Fahrenheit is " << (temp-32)*5/9 << " degrees in Celsius." << endl;
+        }
+
+    else if (choice == "C") {
+         cout << "Input the temperature in Celsius: ";
+         cin >> temp;
+         cout << temp << " degrees in Celsius is " << temp*9/5+32 << " degrees in Fahrenheit." << endl;
+        }
+
+    else
+        cout << "False input" << endl;
+
+    return 0;
+}
