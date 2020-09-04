@@ -1,0 +1,27 @@
+#include <iostream>
+
+using namespace std;
+
+int summa(int *t, int N);
+
+int main()
+{
+    int N;
+    int *t;
+    cout << "Choose the amount of integers to sum: ";
+    cin >> N;
+    cout << "Input your integers: " << endl;
+    for (int i=0; i<N; i++) {
+        cin >> t[i];
+    }
+    summa(t, N);
+    cout << "The sum of your integers is: " << *t << endl;
+    return 0;
+}
+
+int summa (int *t, int N) {
+    for (int i=1; i<N; i++) {
+        *t += t[i];
+    }
+    return *t;
+}
