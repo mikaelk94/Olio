@@ -1,0 +1,26 @@
+#include <iostream>
+
+using namespace std;
+
+bool compare(int x, int y);
+
+int main()
+{
+    int x, y;
+    cout << "Input first integer: ";
+    cin >> x;
+    cout << "Input second integer: ";
+    cin >> y;
+    compare(x,y);
+    return 0;
+}
+
+bool compare(int x, int y) {
+    if (x==y) {
+        cout << "The integers were equal." << endl;
+        return true;
+    }
+    else
+        cout << "The integers were not equal." << endl;
+        return false;
+}
