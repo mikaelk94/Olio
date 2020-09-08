@@ -1,0 +1,28 @@
+#include <iostream>
+
+using namespace std;
+
+void swap (int *, int *);
+
+int main()
+{
+    int x = 1;
+    int y = 2;
+    swap(x,y);
+    cout << x << " " << y << endl;
+    int& j = x;
+    int& k = y;
+    swap(j,k);
+    cout << x << " " << y << endl;
+    return 0;
+}
+
+void swap (int *ptr1, int *ptr2) {
+    *ptr1 = *ptr2;
+}
+
+void swap (int &j, int &k) {
+    int x = j;
+    j = k;
+    k = x;
+}
