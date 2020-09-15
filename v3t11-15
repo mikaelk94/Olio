@@ -1,0 +1,95 @@
+#include <iostream>
+
+using namespace std;
+
+class BRectangle {
+public:
+    double w,h;
+    BRectangle()
+    {
+        w=5;
+        h=5;
+    }
+    double area () const
+    {
+        return w*h;
+    }
+}brect;
+
+class CRectangle {
+public:
+    double w,h;
+    CRectangle()
+    {
+        w=0;
+        h=0;
+    }
+    CRectangle(double a, double b)
+    {
+        w=a;
+        h=b;
+    }
+    CRectangle(CRectangle &L)
+    {
+        w=L.w;
+        h=L.h;
+    }
+
+    void setW(double a)
+    {
+        w=a;
+    }
+
+    void setH(double b)
+    {
+        h=b;
+    }
+
+    double getW() const
+    {
+        return w;
+    }
+
+    double getH() const
+    {
+        return h;
+    }
+
+    double area() const
+    {
+        getW();
+        getH();
+        return w*h;
+    }
+
+    void printValues()
+    {
+        cout <<"Width: "<< w << endl <<"Height: "<< h << endl <<"Area: "<< area() << endl;
+    }
+
+    int compare(BRectangle) const
+    {
+        if ( area() > brect.area() ) {
+            return  1;
+        }
+        else if ( area() == brect.area() )  {
+            return 0;
+        }
+        else
+            return -1;
+    }
+}rect;
+
+int main()
+{
+    double w,h;
+    cout << "Input width: ";
+    cin >> w;
+    rect.setW(w);
+    cout << "Input height: ";
+    cin >> h;
+    rect.setH(h);
+    rect.printValues();
+    cout <<"Compare:"<< rect.compare(brect) << endl;
+    return 0;
+}
