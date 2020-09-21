@@ -1,0 +1,71 @@
+#include <iostream>
+#include <cmath>
+
+using namespace std;
+
+class kompleksiluku
+{
+private:
+    double Re;
+    double Im;
+public:
+    void setReal(double r)
+    {
+        Re = r;
+    }
+
+    double getReal() const
+    {
+        return Re;
+    }
+
+    void setImagine(double r)
+    {
+        Im = r;
+    }
+
+    double getImagine() const
+    {
+        return Im;
+    }
+
+    kompleksiluku()
+    {
+        Re=Im=0;
+    }
+
+    kompleksiluku(double i, double r)
+    {
+        Re=r;
+        Im=i;
+    }
+
+    kompleksiluku(kompleksiluku &L)
+    {
+        Re=L.Re;
+        Im=L.Im;
+    }
+
+    double abs()
+    {
+        return(sqrt(Re*Re+Im*Im));
+    }
+
+    double angle()
+    {
+        return (atan(Im/Re)*180/3.141592);
+    }
+}z;
+
+int main()
+{
+    double r,i;
+    cout << "Input your real number: ";
+    cin >> r;
+    z.setReal(r);
+    cout << "Input your imagine number: ";
+    cin >> i;
+    z.setImagine(i);
+    cout <<"r:"<<z.getReal() <<" "<<"i:"<< z.getImagine() << endl <<"Absolute:"<< z.abs() << endl <<"Angle in degrees:"<< z.angle() << endl;
+    return 0;
+}
