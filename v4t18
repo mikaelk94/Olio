@@ -1,0 +1,28 @@
+#include <iostream>
+#include <list>
+
+using namespace std;
+
+int main()
+{
+    list <int> numbers;
+    list <int>::iterator it;
+
+    int num;
+
+    do
+    {
+        cout << "Input your number: ";
+        cin >> num;
+        numbers.push_back(num);
+    } while (num!=0);
+
+    numbers.sort();
+
+    for (it=numbers.begin(); it!=numbers.end(); it++)
+    {
+        cout << *it << endl;
+    }
+
+    return 0;
+}
