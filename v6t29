@@ -1,0 +1,51 @@
+#include <iostream>
+#include <math.h>
+
+using namespace std;
+
+class muoto {
+private:
+
+protected:
+    double w,h;
+
+public:
+};
+
+class ellipse : public muoto {
+private:
+
+public:
+    void set_values(double a, double b) {
+       w=a;
+       h=b;
+    }
+
+    double area () {
+        return w*h*M_PI;
+    }
+};
+
+class circle : public ellipse {
+private:
+    double r;
+public:
+    void set_radius(double a) {
+        r=a;
+    }
+
+    double area () {
+        return M_PI*pow(r,2);
+    }
+};
+
+int main()
+{
+    ellipse e;
+    circle c;
+    e.set_values(5,4);
+    c.set_radius(5);
+    cout << e.area() << endl;
+    cout << c.area() << endl;
+    return 0;
+}
