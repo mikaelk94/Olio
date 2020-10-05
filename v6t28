@@ -32,8 +32,8 @@ public:
 
 int main()
 {
-    nelio s;
-    s.set_values(5,4);
-    cout << s.area() << endl;
+    nelio n;
+    n.set_values(5,4);
+    cout << n.area() << endl;
     return 0;
 }
