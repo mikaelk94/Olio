@@ -7,13 +7,7 @@ class muoto {
 private:
 
 protected:
-    double w,h;
-
-public:
-};
-
-class ellipse : public muoto {
-private:
+    double w,h,r;
 
 public:
     void set_values(double a, double b) {
@@ -21,6 +15,15 @@ public:
        h=b;
     }
 
+    void set_radius(double x) {
+        r=x;
+    }
+};
+
+class ellipse : public muoto {
+private:
+
+public:
     double area () {
         return w*h*M_PI;
     }
@@ -28,12 +31,7 @@ public:
 
 class circle : public ellipse {
 private:
-    double r;
 public:
-    void set_radius(double a) {
-        r=a;
-    }
-
     double area () {
         return M_PI*pow(r,2);
     }
