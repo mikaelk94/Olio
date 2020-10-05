@@ -1,0 +1,70 @@
+#include <iostream>
+#include <math.h>
+
+using namespace std;
+
+class muoto {
+private:
+protected:
+    double w,h,r;
+public:
+    void set_values(double a, double b) {
+        w=a;
+        h=b;
+    }
+    void set_radius(double x) {
+        r=x;
+    }
+
+    virtual double area() =0;
+};
+
+class suorakulmio : public muoto {
+private:
+public:
+    double area () {
+        return w*h;
+    }
+};
+
+class nelio : public suorakulmio {
+private:
+public:
+};
+
+class ellipse : public muoto {
+private:
+public:
+    double area () {
+        return w*h*M_PI;
+    }
+};
+
+class circle : public muoto {
+private:
+public:
+    double area () {
+        return M_PI*pow(r,2);
+    }
+};
+
+int main()
+{
+    suorakulmio s;
+    nelio n;
+    ellipse e;
+    circle c;
+    muoto * muoto1 = &s;
+    muoto * muoto2 = &n;
+    muoto * muoto3 = &e;
+    muoto * muoto4 = &c;
+    muoto1->set_values(4,5);
+    muoto2->set_values(5,6);
+    muoto3->set_values(4,5);
+    muoto4->set_radius(5);
+    cout << muoto1->area() << endl;
+    cout << muoto2->area() << endl;
+    cout << muoto3->area() << endl;
+    cout << muoto4->area() << endl;
+    return 0;
+}
