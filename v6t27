@@ -1,0 +1,34 @@
+#include <iostream>
+
+using namespace std;
+
+class muoto {
+private:
+
+protected:
+    double w,h;
+
+public:
+};
+
+class suorakulmio : public muoto {
+private:
+
+public:
+    void set_values(double a, double b) {
+       w=a;
+       h=b;
+    }
+
+    int area () {
+        return w*h;
+    }
+};
+
+int main()
+{
+    suorakulmio s;
+    s.set_values(5,4);
+    cout << s.area() << endl;
+    return 0;
+}
