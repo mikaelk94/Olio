@@ -3,6 +3,19 @@
 
 using namespace std;
 
+/*
+Ohjelma pyytää käyttäjää valitsemaan kolmesta vaihtoehdosta. Ohjelman alussa on määritelty luokka nimeltä currency, joka
+pitää sisällään valuuttamuuntimessa käytetyt oliot.
+
+Main-funktiossa käyttäjää pyydetään valitsemaan kolmesta vaihtoehdosta:
+
+1. Lämpötilamuunnin, jonka funktiot ovat ohjelmassa alimmaisena.
+
+2. Numeroiden sorttaus, funktiot löytyy mainin alta.
+
+3. Valuuttamuunnin, joka on toteutettu currency nimisen luokan avulla.
+*/
+
 void temperature();
 void sort();
 
@@ -87,7 +100,7 @@ int main()
         else if (choice == 3) {
             cout << "Amount of Euros to convert: ";
             cin >> amount;
-            cout << "Choose currency to convert: 1: USD, 2: GBP, 3: SEK, 4: RUB" << endl;
+            cout << "Choose a currency to convert to: 1: USD, 2: GBP, 3: SEK, 4: RUB" << endl;
             cin >> choice;
             c.set_choice(choice);
             c.set_amount(amount);
