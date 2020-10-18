@@ -8,11 +8,17 @@ void sort();
 
 class currency {
 private:
-    double amount, USD;
+    double amount, USD, GBP, SEK, RUB;
+    int choice;
+    string valinta;
 
 public:
     currency () {
         USD=1.17;
+        GBP=0.907;
+        SEK=10.38;
+        RUB=91.14;
+        valinta="";
     }
 
     currency (double a) {
@@ -21,7 +27,21 @@ public:
 
     double convert () {
         get_amount();
-        return amount*USD;
+        if (choice==1) {
+            valinta="USD";
+            return amount*USD;
+        }
+        else if (choice==2) {
+            valinta="GBP";
+            return amount*GBP;
+        }
+        else if (choice==3) {
+            valinta="SEK";
+            return amount*SEK;
+        }
+        else if (choice==4)
+            valinta="RUB";
+            return amount*RUB;
     }
 
     void set_amount (double a)  {
@@ -32,8 +52,12 @@ public:
         return amount;
     }
 
+    void set_choice (int a) {
+        choice=a;
+    }
+
     void print_out () {
-        cout << "You have " << convert() << " in USD." << endl;
+        cout << "You have " << convert() << " in " << valinta << endl;
     }
 
 }c;
@@ -63,6 +87,9 @@ int main()
         else if (choice == 3) {
             cout << "Amount of Euros to convert: ";
             cin >> amount;
+            cout << "Choose currency to convert: 1: USD, 2: GBP, 3: SEK, 4: RUB" << endl;
+            cin >> choice;
+            c.set_choice(choice);
             c.set_amount(amount);
             c.print_out();
         }
