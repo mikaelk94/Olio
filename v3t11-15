@@ -6,7 +6,7 @@ using namespace std;
 Ohjelma pyytää käyttäjää valitsemaan kolmesta vaihtoehdosta. Ohjelman alussa on määritelty luokka nimeltä currency, joka
 pitää sisällään valuuttamuuntimessa käytetyt oliot.
 
-Main-funktiossa käyttäjää pyydetään valitsemaan kolmesta vaihtoehdosta.
+Main-funktiossa käyttäjää pyydetään valitsemaan kolmesta vaihtoehdosta:
 
 1. Lämpötilamuunnin, jonka funktiot ovat ohjelmassa alimmaisena.
 
