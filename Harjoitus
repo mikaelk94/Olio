@@ -1,0 +1,120 @@
+#include <iostream>
+#include <list>
+
+using namespace std;
+
+void temperature();
+void sort();
+
+class currency {
+private:
+    double amount, USD;
+
+public:
+    currency () {
+        USD=1.17;
+    }
+
+    currency (double a) {
+        amount=a;
+    }
+
+    double convert () {
+        get_amount();
+        return amount*USD;
+    }
+
+    void set_amount (double a)  {
+        amount=a;
+    }
+
+    double get_amount () {
+        return amount;
+    }
+
+    void print_out () {
+        cout << "You have " << convert() << " in USD." << endl;
+    }
+
+}c;
+
+int main()
+{
+    int choice;
+    int amount;
+
+    do {
+        cout << endl << "Choose your action: " << endl;
+        cout << "1: Temperature modifier C/F" << endl;
+        cout << "2: Sort a list of numbers from smallest to highest" << endl;
+        cout << "3: Currency modifier EUR/USD" << endl;
+        cout << "9: Quit program" << endl;
+        cout << "Enter you choice: ";
+        cin >> choice;
+
+        if (choice == 1) {
+            temperature();
+        }
+
+        else if (choice == 2) {
+            sort();
+        }
+
+        else if (choice == 3) {
+            cout << "Amount of Euros to convert: ";
+            cin >> amount;
+            c.set_amount(amount);
+            c.print_out();
+        }
+    } while (choice != 9);
+
+    return 0;
+}
+
+void sort () {
+    list <int> numbers;
+    list <int>::iterator it;
+
+    int num;
+
+    cout << endl <<"Whenever you are finished, input a zero" << endl;
+
+    do
+    {
+        cout << "Input your number: ";
+        cin >> num;
+        numbers.push_back(num);
+    } while (num!=0);
+
+    numbers.sort();
+
+    cout << "Your numbers from smallest to highest are: " << endl;
+
+    for (it=numbers.begin(); it!=numbers.end(); it++)
+    {
+        cout << *it << endl;
+    }
+}
+
+void temperature() {
+    int temp;
+        string choice;
+        cout << endl << "You choose the temperature modifier.." << endl;
+        cout << "C -> F or F -> C? " << endl << "Select your starting temp: ";
+        cin >> choice;
+
+        if (choice == "F") {
+            cout << "Input the temperature in Fahrenheit: ";
+            cin >> temp;
+            cout << temp << " degrees in Fahrenheit is " << (temp-32)*5/9 << " degrees in Celsius." << endl;
+            }
+
+        else if (choice == "C") {
+             cout << "Input the temperature in Celsius: ";
+             cin >> temp;
+             cout << temp << " degrees in Celsius is " << temp*9/5+32 << " degrees in Fahrenheit." << endl;
+            }
+
+        else
+             cout << "False input" << endl;
+}
