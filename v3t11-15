@@ -2,6 +2,19 @@
 
 using namespace std;
 
+/*
+Ohjelma pyytää käyttäjää valitsemaan kolmesta vaihtoehdosta. Ohjelman alussa on määritelty luokka nimeltä currency, joka
+pitää sisällään valuuttamuuntimessa käytetyt oliot.
+
+Main-funktiossa käyttäjää pyydetään valitsemaan kolmesta vaihtoehdosta.
+
+1. Lämpötilamuunnin, jonka funktiot ovat ohjelmassa alimmaisena.
+
+2. Numeroiden sorttaus, funktiot löytyy mainin alta.
+
+3. Valuuttamuunnin, joka on toteutettu currency nimisen luokan avulla.
+*/
+
 class BRectangle {
 public:
     double w,h;
