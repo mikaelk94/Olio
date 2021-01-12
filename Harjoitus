@@ -146,7 +146,7 @@ void temperature() {
         if (choice == "F") {
             cout << "Input the temperature in Fahrenheit: ";
             cin >> temp;
-            cout << temp << " degrees in Fahrenheit is " << (temp-32)*5/9 << " degrees in Celsius." << endl;
+            cout << temp << " degrees in Fahrenheit is " << (temp-32)/(5/9) << " degrees in Celsius." << endl;
             }
 
         else if (choice == "C") {
