@@ -1,2 +1,2 @@
-# C-Olio-basics
-This repository contains all the exercises from a basic course of C++ / Olio programming held in OAMK 2020.
+# C++ OOP Basics
+This repository contains all the exercises from a basic course of C++ Object Oriented Programming held in OUAS 2020.
